@@ -7,11 +7,12 @@ package oo.heranca;
 * */
 public class Heroi extends Jogador {
 	
-	Heroi(int x, int y){
+	public Heroi(int x, int y){
 		super(x, y);
 	}
 	
-	boolean atacar(Jogador oponente) {
+	@Override
+	public boolean atacar(Jogador oponente) {
 		//chamando um método super/pai
 		//o super permite acessarmos o construtor da classe pai
 		boolean ataque1 = super.atacar(oponente);

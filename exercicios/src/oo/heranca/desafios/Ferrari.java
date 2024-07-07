@@ -1,19 +1,63 @@
 package oo.heranca.desafios;
-public class Ferrari extends Carro {
+
+public class Ferrari extends Carro implements Esportivo, Luxo {
 	
-	Ferrari() {
+	private boolean ligarTurbo = false;
+	private boolean ligarAr = false;
+	
+	public Ferrari() {
 		super(315);
 	}
 	
-	Ferrari(int velocidadeMaxima) {
+	
+	public Ferrari(int velocidadeMaxima) {
 		super(velocidadeMaxima);
-		delta = 350;
+		setDelta(15);
+	}
+	
+	
+	@Override
+	public void ligarTurbo() {
+		ligarTurbo = true;
+	}
+	
+	@Override
+	public void desligarTurbo() {
+		ligarTurbo = false;
+	}
+	
+	@Override
+	public void ligarAr() {
+		ligarAr = true;
+	}
+	
+	@Override
+	public void desligarAr() {
+		ligarAr = false;
+	}
+	
+	@Override
+	public int getDelta() {
+		if(ligarTurbo && !ligarAr) {
+			return 35;
+		}else if(ligarTurbo && ligarAr) {
+			return 30;
+		}else if(!ligarTurbo && !ligarAr) {
+			return 20;
+		}else {
+			return 15;
+		}
 	}
 
 	
-//	@Override
-//	void acelerar() {
-//		super.acelerar();
-//	}
+	/*Não é possível sobrescrever um método e 
+	 diminuir a visibilidade dele. Só é possível
+	 manter ou aumentar a visibilidade do mesmo*/
+	/*
+	@Override
+	public void acelerar() {
+		super.acelerar();
+	}
+	*/
 
 }
