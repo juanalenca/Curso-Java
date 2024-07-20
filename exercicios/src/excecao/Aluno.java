@@ -1,12 +1,12 @@
-package streams;
+package excecao;
 
 import java.util.Objects;
 
 public class Aluno {
 	
 	public final String nome;
-	final double nota;
-	final boolean bomComportamento;
+	public double nota;
+	public boolean bomComportamento;
 	
 	
 	
